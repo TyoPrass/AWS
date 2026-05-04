@@ -8,7 +8,7 @@ const host = process.env.NODE_ENV !== "production" ? "localhost" : "0.0.0.0";
 
 app.use(
   cors({
-    origin: "http://localhost:8080",
+    origin: "https://3.26.22.226/",
   }),
 );
 
