@@ -6,15 +6,17 @@ const app = express();
 const port = process.env.PORT || 3000;
 const host = process.env.NODE_ENV !== "production" ? "localhost" : "0.0.0.0";
 
+// Buka untuk semua Origin sementara (agar aman saat dites/diakses)
 app.use(
   cors({
-    origin: "https://3.26.22.226/",
+    origin: "*",
   }),
 );
 
 app.use(express.json());
 app.use("/", router);
 
-app.listen(port, () => {
+// Tambahkan variabel host di sini
+app.listen(port, host, () => {
   console.log(`Server running at http://${host}:${port}`);
 });
